@@ -58,7 +58,7 @@ class scene1 extends Phaser.Scene{
           this.scene.start("scene_2");
         }
         else if (about) {
-          window.open("https://devpost.com/kevinjycui");
+          window.open("https://devpost.com/software/neurologue");
           about = false;
         }
       }
