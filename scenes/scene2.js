@@ -100,8 +100,8 @@ class scene2 extends Phaser.Scene {
       style
     );
     var option_style = { font: "20px", wordWrap: { width: 400 } };
-    this.option1 = this.add.text(100, 680, "[OK]", style);
-    this.option2 = this.add.text(600, 680, "[OK]", style);
+    this.option1 = this.add.text(100, 680, "[OK]", option_style);
+    this.option2 = this.add.text(600, 680, "[OK]", option_style);
     var nodes = this.cache.json.get('data_part1');
     node = nodes[goto-1]
     this.eeg_text = this.add.text(700, 10, "Emotiv EEG not connected\nEEG metrics set to default", style);
@@ -169,6 +169,10 @@ class scene2 extends Phaser.Scene {
           i++;
         })
         goto = destinations[ind]
+      }
+      if (goto - 1 === nodes.length) {
+        this.music1.stop();
+        this.scene.start("scene_3");
       }
       node = nodes[goto - 1];
       if (node["image"] === null) this.person.visible = false;

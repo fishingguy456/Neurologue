@@ -252,11 +252,13 @@
         "options": {
             "But what is material is ultimately unproven": {
                 "dest": [28, 29],
-                "met": ["rel", "eng"],
-                "eff": ["a+", "f+"]
+                "met": ["exc", "eng"],
+                "eff": ["a+", "f-"]
             },
             "But the meaning of the universe does not need to be inherent": {
-                
+                "dest": [28, 29],
+                "met": ["rel", "eng"],
+                "eff": ["a+", "f+"]
             }
         },
         "image": "guy_talk"
@@ -272,7 +274,7 @@
         "image": "guy_think"
     },
     {
-        "id": 23,
+        "id": 25,
         "text": "What do we truly know about the mind? Is it not true that our senses deceive us? You suffer from nightmares, surely you're familiar with that. And so, how can we make sense of our universe...",
         "options": {
             "OK": {
@@ -280,6 +282,58 @@
             }
         },
         "image": "guy_talk"
+    },
+    {
+        "id": 26,
+        "text": "In nightmares, as well as dreams, we act without logic; often without even consciousness, to the point in which we are unaware what we are doing. And so, I must ask you, do you think you are really you when you are dreaming?",
+        "options": {
+            "Yes": {
+                "dest": [30],
+                "eff": [true]
+            },
+            "No": {
+                "dest": [30],
+                "eff": [false]
+            }
+        },
+        "image": "guy_talk"
+    },
+    {
+        "id": 27,
+        "text": "If nothing can be proven?",
+        "options": {
+            "The universe is chaos. We can only know that nothing is truly known": {
+                "dest": [28, 29],
+                "met": ["str", "eng"],
+                "eff": ["a+", "f-"]
+            },
+            "I think therefore, I am. We know ourselves": {
+                "dest": [28, 29],
+                "met": ["rel", "eng"],
+                "eff": ["a+", "f+"]
+            }
+        },
+        "image": "guy_talk"
+    },
+    {
+        "id": 28,
+        "text": "Spoken like a stoic, my cheerful compadre. Well, since you are so sure of yourself, I shall leave this debate to rest. Lets us begin discussing the nightmares",
+        "options": {
+            "OK": {
+                "dest": [22]
+            }
+        },
+        "image": "guy_smile"
+    },
+    {
+        "id": 29,
+        "text": "How *engaging* this discussion has been. You're quite the Aristotle, my amiable amigo. But enough petty debate. Lets us begin discussing the nightmares",
+        "options": {
+            "OK": {
+                "dest": [30]
+            }
+        },
+        "image": "guy_think"
     }
 
 ]
