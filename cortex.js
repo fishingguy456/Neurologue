@@ -15,6 +15,7 @@ class Cortex {
 
         // read user infor
         this.user = user
+        this.data = ""
     }
 
     queryHeadsetId(){
@@ -306,6 +307,7 @@ class Cortex {
                 // if(JSON.parse(data)['id']==SUB_REQUEST_ID){
                     console.log('SUB REQUEST RESULT --------------------------------')
                     console.log(data)
+                    this.data = data
                     console.log('\r\n')
                 // }
             } catch (error) {}
@@ -686,7 +688,14 @@ try {
     // have six kind of stream data ['fac', 'pow', 'eeg', 'mot', 'met', 'com']
     // user could sub one or many stream at once
     let streams = ['met'];
+    var http = require('http');
     c.sub(streams);
+    http.createServer(function (req, res) {
+        console.log(c.data)
+        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.write(c.data);
+        res.end();
+    }).listen(8080);
   } catch(err) {
     console.log(err)
     return

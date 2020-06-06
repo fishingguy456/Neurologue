@@ -9,7 +9,6 @@
   "author": "Kevin Cui, Kevin Qu, Alex Wassel",
   "license": "ISC",
   "dependencies": {
-    "phaser": "^3.23.0",
     "ws": "^7.3.0"
   }
 }
