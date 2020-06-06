@@ -694,7 +694,11 @@ try {
     c.sub(streams);
     http.createServer(function (req, res) {
         console.log(c.data)
-        res.writeHead(200, {'Content-Type': 'application/json'});
+        res.writeHead(200, {
+            'Content-Type': 'application/json',
+            'Access-Control-Allow-Origin' : '*',
+            'Access-Control-Allow-Methods': 'GET,PUT,POST,DELETE'
+        });
         res.write(c.data);
         res.end();
     }).listen(8080);

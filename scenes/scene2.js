@@ -45,7 +45,7 @@ class scene2 extends Phaser.Scene {
     this.textInfo = this.add.text(
       50,
       600,
-      "How brave of you, mocking the face of controversy! Do you imply that the workings of the mind are at the effect of our surroundings? Or do you question the true reality of our dreams? This, I must know more.",
+      "Hello, World!",
       style
     );
     var option_style = { font: "20px", wordWrap: { width: 400 } };
@@ -74,6 +74,7 @@ class scene2 extends Phaser.Scene {
   update() {
     httpTime++;
     httpRequest();
+    console.log(response)
     this.option1.on("pointerdown", function () {
       clicked = 1;
     });
