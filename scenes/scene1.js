@@ -11,8 +11,16 @@ class scene1 extends Phaser.Scene{
         this.load.image("menu", STATIC_URL + "sprites/menu.png");
         this.load.image("bedroom", STATIC_URL + "sprites/bedroom.png");
         this.load.image("bedroom_light", STATIC_URL + "sprites/bedroom_light.png");
+        this.load.spritesheet("guy_smile_move", STATIC_URL + "sprites/guy_smiling_sheet.png",{
+          frameWidth: 400,
+          frameHeight: 400
+        });
         this.load.image("guy_smile", STATIC_URL + "sprites/guy_smiling.png");
         this.load.image("guy_think", STATIC_URL + "sprites/guy_thinking.png");
+        this.load.spritesheet("guy_think_move", STATIC_URL + "sprites/guy_thinking_spritesheet.png",{
+          frameWidth: 400,
+          frameHeight: 400
+        });
         this.load.image("guy_talk", STATIC_URL + "sprites/guy_talking.png");
         this.load.image("demon_smile", STATIC_URL + "sprites/demon_smile.png");
         this.load.image("demon_angry", STATIC_URL + "sprites/demon_angry.png");
@@ -38,6 +46,16 @@ class scene1 extends Phaser.Scene{
         // this.music0 = this.sound.add("evil_theme");
         this.background = this.add.image(0, 0, "menu");
         this.background.setOrigin(0, 0);
+        this.person = this.add.sprite(280, 488, "guy_smile_move");
+        this.person.scaleX = 1.4;
+        this.person.scaleY = 1.4;
+        this.anims.create({
+          key: "smile_anim",
+          frames: this.anims.generateFrameNumbers("guy_smile_move"),
+          frameRate: 0.5,
+          repeat: -1
+        });
+        this.person.play("smile_anim");
         // this.music0.play();
         var style = {font: "48px", wordWrap: {width: 923}};
         this.play = this.add.text(620, 360,"[Play]", style);
