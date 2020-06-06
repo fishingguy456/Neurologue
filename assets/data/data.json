@@ -4,7 +4,9 @@
         "text": "4:03 PM. It's a cool autumn afternoon. The chilly breeze of the outside air is shut behind you as you enter the dimly lit office building",
         "options": ["Check the time"],
         "children": [2],
-        "image": null
+        "image": null,
+        "background": "office_room_bg",
+        "audio": "calm_theme"
     },
     {
         "id": 2,
@@ -60,6 +62,13 @@
         "text": "Very well. Let me check the time. Alright. Let's get to it then.",
         "options": ["OK"],
         "children": [10],
+        "image": "guy_thinking"
+    },
+    {
+        "id": 10,
+        "text": "So tell me, what has been troubling you lately? I understand that your reason of visit is under \"nightmares\". Would you like to talk about that?",
+        "options": ["Yes, it's my mind'_str", "Yes, it's my mind_!str", "Yes, it's my room_foc", "Yes, it's my room_!foc"],
+        "children": [11, 12, 13, 14],
         "image": "guy_thinking"
     }
 ]

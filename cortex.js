@@ -1,6 +1,8 @@
 const WebSocket = require('ws');
 
 /**
+ * Modified from Cortex V2 example under the terms of the GNU General Public License
+ * https://github.com/Emotiv/cortex-v2-example
  * This class handle:
  *  - create websocket connection
  *  - handle request for : headset , request access, control headset ...
