@@ -18,6 +18,9 @@ const met_map = {
   "foc.isActive": 11,
   "foc": 12
 }
+var psychiatrist = 0;
+var freewill = 0;
+var dreamself = false;
 
 
 function httpRequest(){
@@ -144,9 +147,13 @@ class scene2 extends Phaser.Scene {
     });
     if (clicked > 0) {
       var nodes = this.cache.json.get("data_part1");
+      var effect = "";
       var destinations = node["options"][Object.keys(node["options"])[clicked - 1]]["dest"];
-      if (destinations.length === 1) goto = destinations[0]
-      else if (response === null || !response.hasOwnProperty("met")) goto = destinations[0];
+      var effects = node["options"][Object.keys(node["options"])[clicked - 1]]["eff"];
+      if (destinations.length === 1 || response === null || !response.hasOwnProperty("met")) {
+        goto = destinations[0];
+        effect = effects[ind];
+      }
       else {
         var met_vars = node["options"][Object.keys(node["options"])[clicked - 1]]["met"];
         var max = 0.0;
@@ -169,7 +176,13 @@ class scene2 extends Phaser.Scene {
           i++;
         })
         goto = destinations[ind]
+        effect = effects[ind]
       }
+      if (effect == "a+") psychiatrist++;
+      else if (effect == "a-") psychiatrist--;
+      else if (effect == "f+") freewill++;
+      else if (effect == "f-") freewill--;
+      else if (effect) dreamself = true;
       if (goto - 1 === nodes.length) {
         this.music1.stop();
         this.scene.start("scene_3");
