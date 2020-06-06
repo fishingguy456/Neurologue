@@ -6,7 +6,6 @@ class scene1 extends Phaser.Scene{
     constructor() {
         super("bootGame");
       }
-    
       preload(){
         this.load.image("office", STATIC_URL + "sprites/office_room_bg.png");
         this.load.image("menu", STATIC_URL + "sprites/menu.png");
@@ -23,12 +22,23 @@ class scene1 extends Phaser.Scene{
         this.load.audio("boss_theme", [STATIC_URL + "audio/boss_theme.mp3"]);
         this.load.json("data_part1", STATIC_URL + "data/data_part1.json");
       }
-    
       create() {
-        this.music0 = this.sound.add("evil_theme");
+        var config = {
+          audio: {
+            volume: 1,
+            rate: 1,
+            loop: true,
+            delay:0,
+          }
+        };
+        this.music0 = this.sound.add('evil_theme', config);
+        this.music0.play(config);
+        this.music0.setLoop(true);
+        
+        // this.music0 = this.sound.add("evil_theme");
         this.background = this.add.image(0, 0, "menu");
         this.background.setOrigin(0, 0);
-        this.music0.play();
+        // this.music0.play();
         var style = {font: "48px", wordWrap: {width: 923}};
         this.play = this.add.text(620, 360,"[Play]", style);
         this.about = this.add.text(620, 480,"[About]", style);

@@ -29,13 +29,25 @@ class scene2 extends Phaser.Scene {
   }
 
   preload() {
-    this.music1 = this.sound.add("calm_theme");
+    // this.music1 = this.sound.add("calm_theme");
     this.background = this.add.image(0, 0, "office");
     this.background.setOrigin(0, 0);
-    this.music1.play();
+    // this.music1.play();
   }
 
   create() {
+    var config = {
+      audio: {
+        volume: 1,
+        rate: 1,
+        loop: true,
+        delay:0,
+      }
+    };
+    this.music1 = this.sound.add('calm_theme', config);
+    this.music1.play(config);
+    this.music1.setLoop(true);
+
     this.box = this.add.image(22, 578, "text_box");
     this.box.setOrigin(0, 0);
     this.person = this.add.image(50, 178, "guy_smile");
