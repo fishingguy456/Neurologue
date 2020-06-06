@@ -101,11 +101,13 @@
         "options": {
             "Yes, it's my mind": {
                 "dest": [11, 12],
-                "met": ["str", "!str"]
+                "met": ["str", "!str"],
+                "eff": ["a+", "a-"]
             },
             "Yes, it's my room": {
                 "dest": [13, 14],
-                "met": ["foc, !foc"]
+                "met": ["foc, !foc"],
+                "eff": ["a+", "a-"]
             }
         },
         "image": "guy_think"
@@ -152,15 +154,17 @@
     },
     {
         "id": 15,
-        "text": "Anywho, I think you're quite the intriguing fellow. Whatever your belief, your nightmares will reveal to me either your mind or your environment. And either way, I will be eager to learn",
+        "text": "Anywho, I think you're quite the intriguing fellow. Whatever your belief, your nightmares will reveal to me either your mind or your universe. And either way, I will be eager to learn",
         "options": {
-            "Is enviornment not constructed from the mind?": {
+            "Is the universe not constructed from the mind?": {
                 "dest": [17, 18, 19],
-                "met": ["exc", "int", "!foc"]
+                "met": ["exc", "int", "!foc"],
+                "eff": ["f-", "f-", "a-"]
             },
-            "Is the mind not molded by environment?": {
+            "Is the mind not molded by the universe?": {
                 "dest": [17, 20, 19],
-                "met": ["exc", "int", "!foc"]
+                "met": ["exc", "int", "!foc"],
+                "eff": ["f+", "f+", "a-"]
             }
         },
         "image": "guy_think"
@@ -184,5 +188,98 @@
             }
         },
         "image": "guy_smile"
+    },
+    {
+        "id": 18,
+        "text": "Well, since you're *interested*, let's talk a bit more about that. Perhaps I'm being a bit of a devil's advocate, but allow me to explain.",
+        "options": {
+            "OK": {
+                "dest": [23]
+            }
+        },
+        "image": "guy_think"
+    },
+    {
+        "id": 19,
+        "text": "Do you ask due to curiousity, or are you simply asking to appear more cunning? Here's a question. Why is a *lack* of *focus* is so easy to observe. It's because people are not even focusing on hiding it!",
+        "options": {
+            "OK": {
+                "dest": [24]
+            }
+        },
+        "image": "guy_think"
+    },
+    {
+        "id": 20,
+        "text": "Well, since you're *interested*, let's talk a bit more about that. Perhaps I'm being a bit of a devil's advocate, but allow me to explain.",
+        "options": {
+            "OK": {
+                "dest": [25]
+            }
+        },
+        "image": "guy_think"
+    },
+    {
+        "id": 21,
+        "text": "Anywho, perhaps I am simply misjudging you. A dull universe does not always allude to a dull mind. As well as vice versa, I would say.",
+        "options": {
+            "Is the universe not constructed from the mind?": {
+                "dest": [17, 18, 19],
+                "met": ["exc", "int", "!foc"],
+                "eff": ["f-", "f-", ""]
+            },
+            "Is the mind not molded by the universe?": {
+                "dest": [17, 20, 19],
+                "met": ["exc", "int", "!foc"],
+                "eff": ["f+", "f+", ""]
+            }
+        },
+        "image": "guy_think"
+    },
+    {
+        "id": 22,
+        "text": "You know, I've faced many cases regarding nightmares before: some professional, and some closer to home. And I'm always keen to observe this one detail when it comes to nightmares...",
+        "options": {
+            "OK": {
+                "dest": [26]
+            }
+        },
+        "image": "guy_smile"
+    },
+    {
+        "id": 23,
+        "text": "Who are we to lie to ourselves of our fate? Is it not true that our minds, though so treasured by ourselves, can be ultimately reduced to chemicals and memories: both of which are reactants of our universe?",
+        "options": {
+            "But what is material is ultimately unproven": {
+                "dest": [28, 29],
+                "met": ["rel", "eng"],
+                "eff": ["a+", "f+"]
+            },
+            "But the meaning of the universe does not need to be inherent": {
+                
+            }
+        },
+        "image": "guy_talk"
+    },
+    {
+        "id": 24,
+        "text": "Alas, you have really crushed my spirit. I shall not bore myself with petty conversation. Let us get on with our business",
+        "options": {
+            "OK": {
+                "dest": [22]
+            }
+        },
+        "image": "guy_think"
+    },
+    {
+        "id": 23,
+        "text": "What do we truly know about the mind? Is it not true that our senses deceive us? You suffer from nightmares, surely you're familiar with that. And so, how can we make sense of our universe...",
+        "options": {
+            "OK": {
+                "dest": [27]
+            }
+        },
+        "image": "guy_talk"
     }
+
 ]
