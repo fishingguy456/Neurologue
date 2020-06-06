@@ -8,7 +8,7 @@ var response = null;
 function httpRequest(){
   if (httpDone == false) {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:9000/assets/data/data_part1.json", true);
+    xhr.open("GET", "http://localhost:8080", true);
     xhr.send();
 
     xhr.onreadystatechange = processRequest;
