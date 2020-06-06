@@ -32,12 +32,14 @@ http.createServer(function (req, res) {
       return;
     }
 
+    if (fs.statSync(pathname).isDirectory()) pathname += '/index.html';
+
     fs.readFile(pathname, function(err, data){
       if(err){
         res.statusCode = 500;
         res.end(`Error getting the file: ${err}.`);
       } else {
-        res.setHeader('Content-type', map[ext] || 'text/plain' );
+        res.setHeader('Content-type', map[ext] || 'text/html' );
         res.end(data);
       }
     });
