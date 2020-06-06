@@ -3,6 +3,21 @@ var clicked = 0;
 var node = null;
 var httpTime = 0;
 var response = null;
+const met_map = {
+  "eng.isActive": 0,
+  "eng": 1,
+  "exc.isActive": 2,
+  "exc": 3,
+  "lex": 4,
+  "str.isActive": 5,
+  "str": 6,
+  "rel.isActive": 7,
+  "rel": 8,
+  "int.isActive": 9,
+  "int": 10,
+  "foc.isActive": 11,
+  "foc": 12
+}
 
 
 function httpRequest(){
@@ -15,8 +30,14 @@ function httpRequest(){
     function processRequest(e) {
       if (xhr.readyState == 4 && xhr.status == 200) {
         response = JSON.parse(xhr.responseText);
-        console.log(response[0].id);
-        console.log(response[0].text);
+        console.log(response)
+        console.log('Engagement: ' + response['met'][met_map['eng']]);
+        console.log('Excitement: ' + response['met'][met_map['exc']]);
+        console.log('LongTermExcitement: ' + response['met'][met_map['lex']]);
+        console.log('Stress: ' + response['met'][met_map['str']]);
+        console.log('Relaxation: ' + response['met'][met_map['rel']]);
+        console.log('Interest: ' + response['met'][met_map['int']]);
+        console.log('Focus: ' + response['met'][met_map['foc']]);
       }
     }
     httpTime = 0;
@@ -86,7 +107,6 @@ class scene2 extends Phaser.Scene {
   update() {
     httpTime++;
     httpRequest();
-    console.log(response)
     this.option1.on("pointerdown", function () {
       clicked = 1;
     });
@@ -95,8 +115,36 @@ class scene2 extends Phaser.Scene {
     });
     if (clicked > 0) {
       var nodes = this.cache.json.get("data_part1");
-      goto =
-        node["options"][Object.keys(node["options"])[clicked - 1]]["dest"][0];
+      var destinations = node["options"][Object.keys(node["options"])[clicked - 1]]["dest"];
+      if (destinations.length === 1) goto = destinations[0]
+      else {
+        var met_vars = node["options"][Object.keys(node["options"])[clicked - 1]]["met"];
+        var max = 0.0;
+        var ind = 0;
+        var i = 0;
+        met_vars.forEach(item => {
+          var value = 0;
+          if (response === null)
+            value = 0.5;
+          else {
+            if (item.charAt(0) === '!')
+              value = response["met"][met_map[item.slice(1)]];
+            else
+              value = response["met"][met_map[item]];
+            if (value === null)
+              value = 0.5
+            else if (item.charAt(0) === '!')
+              value = 1 - value;
+          }
+          if (value > max) {
+            max = value;
+            ind = i;
+          }
+          i++;
+        })
+        console.log(max);
+        goto = destinations[ind]
+      }
       node = nodes[goto - 1];
       if (node["image"] === null) this.person.visible = false;
       else {
