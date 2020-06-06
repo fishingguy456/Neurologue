@@ -70,5 +70,26 @@
         "options": ["Yes, it's my mind'_str", "Yes, it's my mind_!str", "Yes, it's my room_foc", "Yes, it's my room_!foc"],
         "children": [11, 12, 13, 14],
         "image": "guy_thinking"
+    },
+    {
+        "id": 11,
+        "text": "Interesting that you speak of the mind. The mind is, afterall, our only compass of reality. \"Je pense, donc je suis\"! Who's to say our dreams are so different from reality?",
+        "options": ["OK"],
+        "children": [15],
+        "image": "guy_talking"
+    },
+    {
+        "id": 12,
+        "text": "Interesting that you speak of the mind. I did **not** take you for someone who is troubled with such **stress**.",
+        "options": ["OK"],
+        "children": [16],
+        "image": "guy_thinking"
+    },
+    {
+        "id": 13,
+        "text": "How brave of you, mocking the face of controvery! Do you imply that the workings of the mind are at the effect of our surroundings? Or do you question the true reality of our dreams? This, I must know more.",
+        "options": ["OK"],
+        "children": [17],
+        "image": "guy_talking"
     }
 ]
