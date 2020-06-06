@@ -6,10 +6,9 @@ var response = null;
 
 
 function httpRequest(){
-    
   if (httpDone == false) {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:9000/", true);
+    xhr.open("GET", "http://localhost:9000/assets/data/data_part1.json", true);
     xhr.send();
 
     xhr.onreadystatechange = processRequest;
@@ -67,14 +66,8 @@ class scene2 extends Phaser.Scene {
     } 
     else
       this.option2.visible = false
-    this.option1.setInteractive(
-      new Phaser.Geom.Rectangle(0, 0, this.option1.width, this.option1.height),
-      Phaser.Geom.Rectangle.Contains
-    );
-    this.option2.setInteractive(
-      new Phaser.Geom.Rectangle(0, 0, this.option2.width, this.option2.height),
-      Phaser.Geom.Rectangle.Contains
-    );
+    this.option1.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.option1.width, this.option1.height), Phaser.Geom.Rectangle.Contains);
+    this.option2.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.option2.width, this.option2.height), Phaser.Geom.Rectangle.Contains);
   }
 
   update() {
