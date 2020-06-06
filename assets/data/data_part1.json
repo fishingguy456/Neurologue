@@ -7,9 +7,7 @@
                 "dest": [2]
             }
         },
-        "image": null,
-        "background": "office_room_bg",
-        "audio": "calm_theme"
+        "image": null
     },
     {
         "id": 2,
@@ -330,7 +328,7 @@
         "text": "How *engaging* this discussion has been. You're quite the Aristotle, my amiable amigo. But enough petty debate. Lets us begin discussing the nightmares",
         "options": {
             "OK": {
-                "dest": [30]
+                "dest": [22]
             }
         },
         "image": "guy_think"

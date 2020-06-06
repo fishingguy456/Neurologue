@@ -174,28 +174,30 @@ class scene2 extends Phaser.Scene {
         this.music1.stop();
         this.scene.start("scene_3");
       }
-      node = nodes[goto - 1];
-      if (node["image"] === null) this.person.visible = false;
       else {
-        this.person.visible = true;
-        if (node["image"] === "guy_think")
-          this.person.play("think_anim");
-        else if (node["image"] == "guy_smile")
-          this.person.play("smile_anim");
+        node = nodes[goto - 1];
+        if (node["image"] === null) this.person.visible = false;
         else {
-          this.person.anims.stop();
-          this.person.setTexture(node["image"]);
+          this.person.visible = true;
+          if (node["image"] === "guy_think")
+            this.person.play("think_anim");
+          else if (node["image"] == "guy_smile")
+            this.person.play("smile_anim");
+          else {
+            this.person.anims.stop();
+            this.person.setTexture(node["image"]);
+          }
         }
-      }
-      this.textInfo.setText(node["text"])
-      this.option1.setText('[X] ' + Object.keys(node['options'])[0])
-      if (Object.keys(node['options']).length > 1) {
-        this.option2.visible = true;
-        this.option2.setText('[X] ' + Object.keys(node['options'])[1])
+        this.textInfo.setText(node["text"])
+        this.option1.setText('[X] ' + Object.keys(node['options'])[0])
+        if (Object.keys(node['options']).length > 1) {
+          this.option2.visible = true;
+          this.option2.setText('[X] ' + Object.keys(node['options'])[1])
+        } 
+        else
+          this.option2.visible = false
       } 
-      else
-        this.option2.visible = false
-      clicked = 0;  
+      clicked = 0; 
     }
   }
 }

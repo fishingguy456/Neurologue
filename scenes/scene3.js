@@ -1,39 +1,3 @@
-var goto = 1;
-var clicked = 0;
-var node = null;
-var httpTime = 0;
-var response = null;
-
-
-function httpRequest(){
-  if (httpTime >= 120) {
-    let xhr = new XMLHttpRequest();
-    try {
-      xhr.open("GET", "http://localhost:8080", true);
-      xhr.send();
-
-      xhr.onreadystatechange = processRequest;
-      function processRequest(e) {
-        if (xhr.readyState == 4 && xhr.status == 200) {
-          response = JSON.parse(xhr.responseText);
-          console.log(response)
-          console.log('Engagement: ' + response['met'][met_map['eng']]);
-          console.log('Excitement: ' + response['met'][met_map['exc']]);
-          console.log('LongTermExcitement: ' + response['met'][met_map['lex']]);
-          console.log('Stress: ' + response['met'][met_map['str']]);
-          console.log('Relaxation: ' + response['met'][met_map['rel']]);
-          console.log('Interest: ' + response['met'][met_map['int']]);
-          console.log('Focus: ' + response['met'][met_map['foc']]);
-        }
-      }
-    }
-    catch(error) {
-      console.log(error);
-    }
-    httpTime = 0;
-  }
-}
-
 class scene3 extends Phaser.Scene {
   constructor() {
     super("scene_3");
@@ -47,6 +11,11 @@ class scene3 extends Phaser.Scene {
   }
 
   create() {
+    goto = 1;
+    clicked = 0;
+    node = null;
+    httpTime = 0;
+    response = null;
     var config = {
       audio: {
         volume: 1,
@@ -85,9 +54,9 @@ class scene3 extends Phaser.Scene {
       style
     );
     var option_style = { font: "20px", wordWrap: { width: 400 } };
-    this.option1 = this.add.text(100, 680, "[OK]", style);
-    this.option2 = this.add.text(600, 680, "[OK]", style);
-    var nodes = this.cache.json.get('data_part1');
+    this.option1 = this.add.text(100, 680, "[OK]", option_style);
+    this.option2 = this.add.text(600, 680, "[OK]", option_style);
+    var nodes = this.cache.json.get('data_part2');
     node = nodes[goto-1]
     this.eeg_text = this.add.text(700, 10, "Emotiv EEG not connected\nEEG metrics set to default", style);
     if (node["image"] === null)
@@ -155,32 +124,34 @@ class scene3 extends Phaser.Scene {
         })
         goto = destinations[ind]
       }
-      if (goto === nodes.length) {
+      if (goto - 1 === nodes.length) {
         this.music1.stop();
         this.scene.start("scene_3");
       }
-      node = nodes[goto - 1];
-      if (node["image"] === null) this.person.visible = false;
       else {
-        this.person.visible = true;
-        if (node["image"] === "guy_think")
-          this.person.play("think_anim");
-        else if (node["image"] == "guy_smile")
-          this.person.play("smile_anim");
+        node = nodes[goto - 1];
+        if (node["image"] === null) this.person.visible = false;
         else {
-          this.person.anims.stop();
-          this.person.setTexture(node["image"]);
+          this.person.visible = true;
+          if (node["image"] === "guy_think")
+            this.person.play("think_anim");
+          else if (node["image"] == "guy_smile")
+            this.person.play("smile_anim");
+          else {
+            this.person.anims.stop();
+            this.person.setTexture(node["image"]);
+          }
         }
-      }
-      this.textInfo.setText(node["text"])
-      this.option1.setText('[X] ' + Object.keys(node['options'])[0])
-      if (Object.keys(node['options']).length > 1) {
-        this.option2.visible = true;
-        this.option2.setText('[X] ' + Object.keys(node['options'])[1])
+        this.textInfo.setText(node["text"])
+        this.option1.setText('[X] ' + Object.keys(node['options'])[0])
+        if (Object.keys(node['options']).length > 1) {
+          this.option2.visible = true;
+          this.option2.setText('[X] ' + Object.keys(node['options'])[1])
+        } 
+        else
+          this.option2.visible = false
       } 
-      else
-        this.option2.visible = false
-      clicked = 0;  
+      clicked = 0; 
     }
   }
 }
