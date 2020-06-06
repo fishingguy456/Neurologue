@@ -45,42 +45,19 @@ class scene2 extends Phaser.Scene {
     this.textInfo = this.add.text(
       50,
       600,
-      "How brave of you, mocking the face of controvery! Do you imply that the workings of the mind are at the effect of our surroundings? Or do you question the true reality of our dreams? This, I must know more.",
+      "How brave of you, mocking the face of controversy! Do you imply that the workings of the mind are at the effect of our surroundings? Or do you question the true reality of our dreams? This, I must know more.",
       style
     );
     this.option1 = this.add.text(100, 680, "[OK]", style);
-<<<<<<< HEAD
-    this.option2 = this.add.text(700, 680, "[OK]", style);
-    var nodes = this.cache.json.get("data_part1");
-    node = nodes[goto - 1];
-    if (node["image"] === null) this.person.visible = false;
-=======
     this.option2 = this.add.text(600, 680, "[OK]", style);
     var nodes = this.cache.json.get('data_part1');
     node = nodes[goto-1]
     if (node["image"] === null)
       this.person.visible = false;
->>>>>>> 82172887d4425d2d39672edae900400cb0915fe5
     else {
       this.person.visible = true;
       this.person.setTexture(node["image"]);
     }
-<<<<<<< HEAD
-    this.textInfo.setText(node["text"]);
-    this.option1.setText("[" + Object.keys(node["options"])[0] + "]");
-    if (Object.keys(node["options"]).length > 1) {
-      this.option2.visible = true;
-      this.option2.setText("[" + Object.keys(node["options"])[1] + "]");
-    } else this.option2.visible = false;
-    this.option1.setInteractive(
-      new Phaser.Geom.Rectangle(0, 0, this.option1.width, this.option1.height),
-      Phaser.Geom.Rectangle.Contains
-    );
-    this.option2.setInteractive(
-      new Phaser.Geom.Rectangle(0, 0, this.option2.width, this.option2.height),
-      Phaser.Geom.Rectangle.Contains
-    );
-=======
     this.textInfo.setText(node["text"])
     this.option1.setText('[X] ' + Object.keys(node['options'])[0])
     if (Object.keys(node['options']).length > 1) {
@@ -89,9 +66,14 @@ class scene2 extends Phaser.Scene {
     } 
     else
       this.option2.visible = false
-    this.option1.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.option1.width, this.option1.height), Phaser.Geom.Rectangle.Contains);
-    this.option2.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.option2.width, this.option2.height), Phaser.Geom.Rectangle.Contains);
->>>>>>> 82172887d4425d2d39672edae900400cb0915fe5
+    this.option1.setInteractive(
+      new Phaser.Geom.Rectangle(0, 0, this.option1.width, this.option1.height),
+      Phaser.Geom.Rectangle.Contains
+    );
+    this.option2.setInteractive(
+      new Phaser.Geom.Rectangle(0, 0, this.option2.width, this.option2.height),
+      Phaser.Geom.Rectangle.Contains
+    );
   }
 
   update() {
@@ -112,14 +94,6 @@ class scene2 extends Phaser.Scene {
         this.person.visible = true;
         this.person.setTexture(node["image"]);
       }
-<<<<<<< HEAD
-      this.textInfo.setText(node["text"]);
-      this.option1.setText("[" + Object.keys(node["options"])[0] + "]");
-      if (Object.keys(node["options"]).length > 1) {
-        this.option2.visible = true;
-        this.option2.setText("[" + Object.keys(node["options"])[1] + "]");
-      } else this.option2.visible = false;
-=======
       this.textInfo.setText(node["text"])
       this.option1.setText('[X] ' + Object.keys(node['options'])[0])
       if (Object.keys(node['options']).length > 1) {
@@ -128,7 +102,6 @@ class scene2 extends Phaser.Scene {
       } 
       else
         this.option2.visible = false
->>>>>>> 82172887d4425d2d39672edae900400cb0915fe5
       clicked = 0;
     }
   }
