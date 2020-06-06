@@ -82,8 +82,8 @@ class scene2 extends Phaser.Scene {
       style
     );
     var option_style = { font: "20px", wordWrap: { width: 400 } };
-    this.option1 = this.add.text(100, 680, "[OK]", option_style);
-    this.option2 = this.add.text(600, 680, "[OK]", option_style);
+    this.option1 = this.add.text(100, 680, "[OK]", style);
+    this.option2 = this.add.text(600, 680, "[OK]", style);
     var nodes = this.cache.json.get('data_part1');
     node = nodes[goto-1]
     if (node["image"] === null)
