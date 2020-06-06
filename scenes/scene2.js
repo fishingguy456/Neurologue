@@ -77,20 +77,20 @@ class scene2 extends Phaser.Scene {
     this.box = this.add.image(22, 578, "text_box");
     this.box.setOrigin(0, 0);
 
-    this.person = this.add.sprite(280, 488, "guy_think_move");
-    this.person.scaleX = 1.4;
-    this.person.scaleY = 1.4;
+    this.person = this.add.sprite(250, 375, "guy_smile_move");
+    this.anims.create({
+      key: "smile_anim",
+      frames: this.anims.generateFrameNumbers("guy_smile_move"),
+      frameRate: 0.5,
+      repeat: -1
+    });
     this.anims.create({
       key: "think_anim",
       frames: this.anims.generateFrameNumbers("guy_think_move"),
       frameRate: 0.5,
       repeat: -1
     });
-    this.person.play("think_anim");
-
-    // this.person = this.add.image(50, 178, "guy_smile");
-    // this.person.setOrigin(0, 0);
-    // this.person.visible = false;
+    this.person.play("smile_anim");
 
     var style = { font: "20px", wordWrap: { width: 923 } };
     this.textInfo = this.add.text(
@@ -108,8 +108,14 @@ class scene2 extends Phaser.Scene {
     if (node["image"] === null)
       this.person.visible = false;
     else {
-      this.person.visible = true;
-      this.person.setTexture(node["image"]);
+      if (node["image"] === "guy_think")
+        this.person.play("think_anim");
+      else if (node["image"] == "guy_smile")
+        this.person.play("smile_anim");
+      else {
+        this.person.anims.stop();
+        this.person.setTexture(node["image"]);
+      }
     }
     this.textInfo.setText(node["text"])
     this.option1.setText('[X] ' + Object.keys(node['options'])[0])
@@ -168,7 +174,14 @@ class scene2 extends Phaser.Scene {
       if (node["image"] === null) this.person.visible = false;
       else {
         this.person.visible = true;
-        this.person.setTexture(node["image"]);
+        if (node["image"] === "guy_think")
+          this.person.play("think_anim");
+        else if (node["image"] == "guy_smile")
+          this.person.play("smile_anim");
+        else {
+          this.person.anims.stop();
+          this.person.setTexture(node["image"]);
+        }
       }
       this.textInfo.setText(node["text"])
       this.option1.setText('[X] ' + Object.keys(node['options'])[0])
