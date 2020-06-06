@@ -1,6 +1,6 @@
 var config = {
-    width: 256,
-    height: 272,
+    width: 1024,
+    height: 768,
     backgroundColor: 0x000000,
     scene: [scene1, scene2]
 }
