@@ -91,7 +91,7 @@ class scene2 extends Phaser.Scene {
     this.option2 = this.add.text(600, 680, "[OK]", style);
     var nodes = this.cache.json.get('data_part1');
     node = nodes[goto-1]
-    this.eeg_text = this.add.text(700, 20, "Emotiv EEG not connected", style);
+    this.eeg_text = this.add.text(700, 10, "Emotiv EEG not connected\nEEG metrics set to default", style);
     if (node["image"] === null)
       this.person.visible = false;
     else {
@@ -113,6 +113,10 @@ class scene2 extends Phaser.Scene {
   update() {
     httpTime++;
     httpRequest();
+    if (response === null || !response.hasOwnProperty("met"))
+      this.eeg_text.setText("Emotiv EEG not connected\nEEG metrics set to default")
+    else
+      this.eeg_text.setText("Emotiv EEG connected")
     this.option1.on("pointerdown", function () {
       clicked = 1;
     });
@@ -123,12 +127,8 @@ class scene2 extends Phaser.Scene {
       var nodes = this.cache.json.get("data_part1");
       var destinations = node["options"][Object.keys(node["options"])[clicked - 1]]["dest"];
       if (destinations.length === 1) goto = destinations[0]
-      else if (response === null || !response.hasOwnProperty("met")) {
-        goto = destinations[0];
-        this.eeg_text.setText("Emotiv EEG not connected")
-      }
+      else if (response === null || !response.hasOwnProperty("met")) goto = destinations[0];
       else {
-        this.eeg_text.setText("Emotiv EEG connected")
         var met_vars = node["options"][Object.keys(node["options"])[clicked - 1]]["met"];
         var max = 0.0;
         var ind = 0;
