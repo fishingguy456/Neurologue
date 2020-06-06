@@ -1,0 +1,65 @@
+[
+    {
+        "id": 1,
+        "text": "4:03 PM. It's a cool autumn afternoon. The chilly breeze of the outside air is shut behind you as you enter the dimly lit office building",
+        "options": ["Check the time"],
+        "children": [2],
+        "image": null
+    },
+    {
+        "id": 2,
+        "text": "You check the time. 4:04. Seems like you're 4 minutes late to your appointment.",
+        "options": ["Wait in the waiting room", "Step into the office"],
+        "children": [3, 4],
+        "image": null
+    },
+    {
+        "id": 3,
+        "text": "The clock ticks. It is now 4:05. You don't hear anything from the office",
+        "options": ["Step into the office"],
+        "children": [4],
+        "image": null
+    },
+    {
+        "id": 4,
+        "text": "The office is as cold as it was outside, though in an oddly comfortable way",
+        "options": ["OK"],
+        "children": [5],
+        "image": null
+    },
+    {
+        "id": 5,
+        "text": "Good afternoon!",
+        "options": ["Afternoon_str", "Afternoon_eng", "Afternoon_int"],
+        "children": [6, 7, 8],
+        "image": "guy_smiling"
+    },
+    {
+        "id": 6,
+        "text": "No need to be **stressed**, good friend. Have a seat! Make yourself at home!",
+        "options": ["Sit"],
+        "children": [9],
+        "image": "guy_smiling"
+    },
+    {
+        "id": 7,
+        "text": "Aren't you **excited**! You look like someone that I'd like to meet! Take a seat!",
+        "options": ["Sit"],
+        "children": [9],
+        "image": "guy_thinking"
+    },
+    {
+        "id": 8,
+        "text": "Anything caught your **interest**, my curious compadre? Nevermind, have a seat!",
+        "options": ["Sit"],
+        "children": [9],
+        "image": "guy_talking"
+    },
+    {
+        "id": 9,
+        "text": "Very well. Let me check the time. Alright. Let's get to it then.",
+        "options": ["OK"],
+        "children": [10],
+        "image": "guy_thinking"
+    }
+]
