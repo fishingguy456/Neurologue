@@ -24,7 +24,7 @@ class scene2 extends Phaser.Scene {
     var style = {font: "20px", wordWrap: {width: 923}};
     this.textInfo = this.add.text(50, 600,"How brave of you, mocking the face of controvery! Do you imply that the workings of the mind are at the effect of our surroundings? Or do you question the true reality of our dreams? This, I must know more.", style);
     this.option1 = this.add.text(100, 680, "[OK]", style);
-    this.option2 = this.add.text(700, 680, "[OK]", style);
+    this.option2 = this.add.text(600, 680, "[OK]", style);
     var nodes = this.cache.json.get('data_part1');
     node = nodes[goto-1]
     if (node["image"] === null)
@@ -34,10 +34,10 @@ class scene2 extends Phaser.Scene {
       this.person.setTexture(node["image"])
     }
     this.textInfo.setText(node["text"])
-    this.option1.setText('[' + Object.keys(node['options'])[0] + ']')
+    this.option1.setText('[X] ' + Object.keys(node['options'])[0])
     if (Object.keys(node['options']).length > 1) {
       this.option2.visible = true;
-      this.option2.setText('[' + Object.keys(node['options'])[1] + ']')
+      this.option2.setText('[X] ' + Object.keys(node['options'])[1])
     } 
     else
       this.option2.visible = false
@@ -64,10 +64,10 @@ class scene2 extends Phaser.Scene {
         this.person.setTexture(node["image"])
       }
       this.textInfo.setText(node["text"])
-      this.option1.setText('[' + Object.keys(node['options'])[0] + ']')
+      this.option1.setText('[X] ' + Object.keys(node['options'])[0])
       if (Object.keys(node['options']).length > 1) {
         this.option2.visible = true;
-        this.option2.setText('[' + Object.keys(node['options'])[1] + ']')
+        this.option2.setText('[X] ' + Object.keys(node['options'])[1])
       } 
       else
         this.option2.visible = false
