@@ -1,0 +1,15 @@
+{
+  "name": "hack-the-ne",
+  "version": "1.0.0",
+  "description": "Hack the Northeast Submission",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kevin Cui, Kevin Qu, Alex Wassel",
+  "license": "ISC",
+  "dependencies": {
+    "phaser": "^3.23.0",
+    "ws": "^7.3.0"
+  }
+}
