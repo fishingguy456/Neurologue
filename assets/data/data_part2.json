@@ -14,7 +14,7 @@
     },
     {
         "id": 2,
-        "text": "It is now 9:00. In the distance, you hear thunber rumbling",
+        "text": "It is now 9:00. In the distance, you hear thunder rumbling",
         "options": {
             "OK": {
                 "dest": [4]
