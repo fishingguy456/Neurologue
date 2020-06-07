@@ -160,7 +160,7 @@ class scene2 extends Phaser.Scene {
       var effects = node["options"][Object.keys(node["options"])[clicked - 1]]["eff"];
       if (destinations.length === 1 || response === null || !response.hasOwnProperty("met")) {
         goto = destinations[0];
-        effect = effects[ind];
+        effect = effects[0];
       }
       else {
         var met_vars = node["options"][Object.keys(node["options"])[clicked - 1]]["met"];
