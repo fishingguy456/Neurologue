@@ -1,6 +1,9 @@
 const STATIC_URL = "http://localhost:9000/assets/"
 var start = false;
 var about = false;
+var goodEnding = false;
+var badEnding = false;
+var trueEnding = false;
 
 class scene1 extends Phaser.Scene{
     constructor() {
@@ -23,6 +26,10 @@ class scene1 extends Phaser.Scene{
         });
         this.load.image("guy_talk", STATIC_URL + "sprites/guy_talking.png");
         this.load.spritesheet("guy_talk_move", STATIC_URL + "sprites/guy_talking_spritesheet.png",{
+          frameWidth: 400,
+          frameHeight: 400
+        });
+        this.load.spritesheet("demon_laugh_move", STATIC_URL + "sprites/demon_laughing_spritesheet.png",{
           frameWidth: 400,
           frameHeight: 400
         });
