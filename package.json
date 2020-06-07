@@ -9,6 +9,8 @@
   "author": "Kevin Cui, Kevin Qu, Alex Wassel",
   "license": "ISC",
   "dependencies": {
-    "ws": "^7.3.0"
+    "phaser3-rex-plugins": "^1.1.18",
+    "ws": "^7.3.0",
+    "xmlhttprequest": "^1.8.0"
   }
 }
