@@ -159,20 +159,30 @@
                 "met": ["exc", "int", "!foc"]
             },
             "Is the mind not molded by environment?": {
-                "dest": [17, 18, 19],
+                "dest": [17, 20, 19],
                 "met": ["exc", "int", "!foc"]
             }
         },
         "image": "guy_smile"
     },
     {
-        "id": 15,
+        "id": 16,
         "text": "How disappointing. Alas, even I am a flawed philosopher",
         "options": {
             "OK": {
-                "dest": [20]
+                "dest": [21]
             }
         },
         "image": "guy_talk"
+    },
+    {
+        "id": 17,
+        "text": "Oh ho, getting quite *excited* now, aren't we? Let us question the free will of ourselves on a later time. Explain to me, please, your nightmares.",
+        "options": {
+            "OK": {
+                "dest": [22]
+            }
+        },
+        "image": "guy_smile"
     }
 ]
