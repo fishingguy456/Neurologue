@@ -23,10 +23,22 @@ class scene1 extends Phaser.Scene{
         this.load.json("data_part1", STATIC_URL + "data/data_part1.json");
       }
       create() {
-        this.music0 = this.sound.add("evil_theme");
+        var config = {
+          audio: {
+            volume: 1,
+            rate: 1,
+            loop: true,
+            delay:0,
+          }
+        };
+        var music = this.sound.add('evil_theme', config);
+        music.play(config);
+        music.setLoop(true);
+        
+        // this.music0 = this.sound.add("evil_theme");
         this.background = this.add.image(0, 0, "menu");
         this.background.setOrigin(0, 0);
-        this.music0.play();
+        // this.music0.play();
         var style = {font: "48px", wordWrap: {width: 923}};
         this.play = this.add.text(620, 360,"[Play]", style);
         this.about = this.add.text(620, 480,"[About]", style);
