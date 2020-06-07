@@ -1,10 +1,6 @@
-<<<<<<< HEAD
-const STATIC_URL = "http://localhost:9000/assets/";
-=======
 const STATIC_URL = "http://localhost:9000/assets/"
 var start = false;
 var about = false;
->>>>>>> 764d826c93f7016e31a1db5dc1a5612ed44f4baf
 
 class scene1 extends Phaser.Scene{
     constructor() {

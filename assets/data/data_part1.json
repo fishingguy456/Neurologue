@@ -132,7 +132,7 @@
     },
     {
         "id": 13,
-        "text": "How brave of you, mocking the face of controvery! Do you imply that the workings of the mind are at the effect of our surroundings? Or do you question the true reality of our dreams? This, I must know more.",
+        "text": "How brave of you, mocking the face of controversy! Do you imply that the workings of the mind are at the effect of our surroundings? Or do you question the true reality of our dreams? This, I must know more.",
         "options": {
             "OK": {
                 "dest": [15]
