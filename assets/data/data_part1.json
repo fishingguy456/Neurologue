@@ -57,7 +57,7 @@
     },
     {
         "id": 6,
-        "text": "No need to be **stressed**, good friend. Have a seat! Make yourself at home!",
+        "text": "No need to be *stressed*, good friend. Have a seat! Make yourself at home!",
         "options": {
             "Sit": {
                 "dest": [9]
@@ -67,7 +67,7 @@
     },
     {
         "id": 7,
-        "text": "Aren't you **excited**! You look like someone that I'd like to meet! Take a seat!",
+        "text": "Aren't you *excited*! You look like someone that I'd like to meet! Take a seat!",
         "options": {
             "Sit": {
                 "dest": [9]
@@ -77,7 +77,7 @@
     },
     {
         "id": 8,
-        "text": "Anything caught your **interest**, my curious compadre? Nevermind, have a seat!",
+        "text": "Anything caught your *interest*, my curious compadre? Nevermind, have a seat!",
         "options": {
             "Sit": {
                 "dest": [9]
@@ -90,7 +90,7 @@
         "text": "Very well. Let me check the time. Alright. Let's get to it then.",
         "options": {
             "OK": {
-                "dest": 10
+                "dest": [10]
             }
         },
         "image": "guy_think"
@@ -112,7 +112,7 @@
     },
     {
         "id": 11,
-        "text": "Interesting that you speak of the mind. The mind is, afterall, our only compass of reality. \"Je pense, donc je suis\"! Who's to say our dreams are so different from reality?",
+        "text": "Interesting that you speak of the mind. The mind is, after all, our only compass of reality. \"Je pense, donc je suis\"! Who's to say our dreams are so different from reality?",
         "options": {
             "OK": {
                 "dest": [15]
@@ -122,7 +122,7 @@
     },
     {
         "id": 12,
-        "text": "Interesting that you speak of the mind. I did **not** take you for someone who is troubled with such **stress**.",
+        "text": "Interesting that you speak of the mind. I did *not* take you for someone who is troubled with *stress*.",
         "options": {
             "OK": {
                 "dest": [16]
@@ -132,7 +132,7 @@
     },
     {
         "id": 13,
-        "text": "How brave of you, mocking the face of controvery! Do you imply that the workings of the mind are at the effect of our surroundings? Or do you question the true reality of our dreams? This, I must know more.",
+        "text": "How brave of you, mocking the face of controversy! Do you imply that the workings of the mind are at the effect of our surroundings? Or do you question the true reality of our dreams? This, I must know more.",
         "options": {
             "OK": {
                 "dest": [15]
@@ -142,12 +142,47 @@
     },
     {
         "id": 14,
-        "text": "I don't believe you understand what you're saying. Are you implying that your nightmares are beyond the realm of your mind? Please **focus** on what I'm saying here",
+        "text": "I don't believe you understand what you're saying. Are you implying that your nightmares are beyond the realm of your mind? Please *focus* on what I'm saying here",
         "options": {
             "OK": {
                 "dest": [16]
             }
         },
         "image": "guy_think"
+    },
+    {
+        "id": 15,
+        "text": "Anywho, I think you're quite the intriguing fellow. Whatever your belief, your nightmares will reveal to me either your mind or your environment. And either way, I will be eager to learn",
+        "options": {
+            "Is enviornment not constructed from the mind?": {
+                "dest": [17, 18, 19],
+                "met": ["exc", "int", "!foc"]
+            },
+            "Is the mind not molded by environment?": {
+                "dest": [17, 20, 19],
+                "met": ["exc", "int", "!foc"]
+            }
+        },
+        "image": "guy_smile"
+    },
+    {
+        "id": 16,
+        "text": "How disappointing. Alas, even I am a flawed philosopher",
+        "options": {
+            "OK": {
+                "dest": [21]
+            }
+        },
+        "image": "guy_talk"
+    },
+    {
+        "id": 17,
+        "text": "Oh ho, getting quite *excited* now, aren't we? Let us question the free will of ourselves on a later time. Explain to me, please, your nightmares.",
+        "options": {
+            "OK": {
+                "dest": [22]
+            }
+        },
+        "image": "guy_smile"
     }
 ]
