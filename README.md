@@ -11,10 +11,10 @@ A psychological horror choose-your own-adventure game that follows the player's 
 * MS Paint
 
 ## Try it yourself!
-In the project directory, install npm:
+In the project directory, install npm dependencies:
 
     npm install
-Run Cortex (if no EEG device available, skip this):
+Connect your Emotiv device and run Cortex (if no EEG device available, skip this- game will use default values for EEG metrics):
 
     node cortex.js
 Run the app
