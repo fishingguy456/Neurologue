@@ -24,9 +24,9 @@ class scene4 extends Phaser.Scene{
           delay:0,
         }
       };
-      this.music1 = this.sound.add('boss_theme', config);
-      this.music1.play(config);
-      this.music1.setLoop(true);
+      this.music2 = this.sound.add('boss_theme', config);
+      this.music2.play(config);
+      this.music2.setLoop(true);
   
       this.box = this.add.image(22, 578, "text_box");
       this.box.setOrigin(0, 0);
@@ -63,7 +63,6 @@ class scene4 extends Phaser.Scene{
       this.option1 = this.add.text(100, 680, "[OK]", option_style);
       this.option2 = this.add.text(600, 680, "[OK]", option_style);
       var nodes = this.cache.json.get('data_part3');
-      console.log(nodes)
       node = nodes[goto-1]
       this.eeg_text = this.add.text(700, 10, "Emotiv EEG not connected\nEEG metrics set to default", style);
       if (node["image"] === null)
@@ -161,8 +160,11 @@ class scene4 extends Phaser.Scene{
         else if (effect == "f+") freewill++;
         else if (effect == "f-") freewill--;
         else if (effect) dreamself = true;
-        if (goto - 1 === nodes.length) {
-          this.music1.stop();
+        if (goto > 99) {
+          this.music2.stop();
+          if (goto === 100) badEnding = true;
+          else if (goto === 101) goodEnding = true;
+          else if (goto === 102) trueEnding = true;
           this.scene.start("scene_5");
         }
         else {
