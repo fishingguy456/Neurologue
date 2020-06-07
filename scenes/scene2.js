@@ -44,9 +44,10 @@ class scene2 extends Phaser.Scene {
         delay:0,
       }
     };
-    var music = this.sound.add('calm_theme', config);
-    music.play(config);
-    music.setLoop(true);
+    this.music1 = this.sound.add('calm_theme', config);
+    this.music1.play(config);
+    this.music1.setLoop(true);
+
     this.box = this.add.image(22, 578, "text_box");
     this.box.setOrigin(0, 0);
     this.person = this.add.image(50, 178, "guy_smile");
@@ -56,7 +57,7 @@ class scene2 extends Phaser.Scene {
     this.textInfo = this.add.text(
       50,
       600,
-      "How brave of you, mocking the face of controversy! Do you imply that the workings of the mind are at the effect of our surroundings? Or do you question the true reality of our dreams? This, I must know more.",
+      "Hello, World!",
       style
     );
     var option_style = { font: "20px", wordWrap: { width: 400 } };
@@ -85,6 +86,7 @@ class scene2 extends Phaser.Scene {
   update() {
     httpTime++;
     httpRequest();
+    console.log(response)
     this.option1.on("pointerdown", function () {
       clicked = 1;
     });
