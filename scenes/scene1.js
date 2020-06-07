@@ -36,6 +36,9 @@ class scene1 extends Phaser.Scene{
         this.load.image("demon_smile", STATIC_URL + "sprites/demon_smile.png");
         this.load.image("demon_angry", STATIC_URL + "sprites/demon_angry.png");
         this.load.image("text_box", STATIC_URL + "sprites/text_box.png");
+        this.load.image("good_ending", STATIC_URL + "sprites/good_ending.png");
+        this.load.image("true_ending", STATIC_URL + "sprites/true_ending.png");
+        this.load.image("black_screen", STATIC_URL + "sprites/blackscreen.png");
         this.load.audio("calm_theme", [STATIC_URL + "audio/calm_theme.mp3"]);
         this.load.audio("evil_theme", [STATIC_URL + "audio/evil_theme.mp3"]);
         this.load.audio("boss_theme", [STATIC_URL + "audio/boss_theme.mp3"]);
