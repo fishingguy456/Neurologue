@@ -26,8 +26,8 @@ var dreamself = false;
 function httpRequest(){
   if (httpTime >= 120) {
     let xhr = new XMLHttpRequest();
-    try {
       xhr.open("GET", "http://localhost:8080", true);
+      try {
       xhr.send();
 
       xhr.onreadystatechange = processRequest;
@@ -160,7 +160,7 @@ class scene2 extends Phaser.Scene {
       var effects = node["options"][Object.keys(node["options"])[clicked - 1]]["eff"];
       if (destinations.length === 1 || response === null || !response.hasOwnProperty("met")) {
         goto = destinations[0];
-        effect = effects[ind];
+        effect = null;
       }
       else {
         var met_vars = node["options"][Object.keys(node["options"])[clicked - 1]]["met"];
@@ -183,8 +183,8 @@ class scene2 extends Phaser.Scene {
           }
           i++;
         })
-        goto = destinations[ind]
-        effect = effects[ind]
+        goto = destinations[ind];
+        effect = effects[ind];
       }
       if (effect == "a+") psychiatrist++;
       else if (effect == "a-") psychiatrist--;
