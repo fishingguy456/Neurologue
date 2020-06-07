@@ -15,6 +15,7 @@ class scene1 extends Phaser.Scene{
         this.load.image("demon_angry", STATIC_URL + "sprites/demon_angry.png");
         this.load.image("text_box", STATIC_URL + "sprites/text_box.png");
         this.load.audio("calm_theme", [STATIC_URL + "audio/calm_theme.mp3"]);
+        this.load.json("data_part1", STATIC_URL + "data/data_part1.json");
       }
       create() {
         this.scene.start("scene_2");
