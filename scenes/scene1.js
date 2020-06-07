@@ -34,6 +34,7 @@ class scene1 extends Phaser.Scene{
         this.load.audio("boss_theme", [STATIC_URL + "audio/boss_theme.mp3"]);
         this.load.json("data_part1", STATIC_URL + "data/data_part1.json");
         this.load.json("data_part2", STATIC_URL + "data/data_part2.json");
+        this.load.json("data_part3", STATIC_URL + "data/data_part3.json");
       }
       create() {
         var config = {

@@ -19,6 +19,153 @@
             "OK": {
                 "dest": [4]
             }
+        },
+        "image": null
+    },
+    {
+        "id": 3,
+        "text": "The bed is cold and firm. Springs creak as you sit yourself down",
+        "options": {
+            "OK": {
+                "dest": [4]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 4,
+        "text": "The noises get louder. It becomes almost unatural, a pure dissonance of sound. Impossible to interpret",
+        "options": {
+            "Go to sleep": {
+                "dest": [5, 6],
+                "met": ["rel", "str"],
+                "eff": ["f-", ""]
+            },
+            "Stay awake": {
+                "dest": [7, 8],
+                "met": ["foc", "!foc"],
+                "eff": ["f+", ""]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 5,
+        "text": "You lie down and ignore the noises. In your *relaxation*, you blissly begin to drift off",
+        "options": {
+            "Wake up": {
+                "dest": [9]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 6,
+        "text": "You lie down, shutting your eyes closed. Yet the harder you try to sleep the less tired you become. You end up lying motionless, trying to get past your *stress*",
+        "options": {
+            "Get up": {
+                "dest": [10]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 7,
+        "text": "You force yourself to stay awake, though you're not completely sure why. You feel as if something needs to be done before you sleep, but you're not sure what. As you *focus* to stay awake, the night passes you by",
+        "options": {
+            "OK": {
+                "dest": [10]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 8,
+        "text": "You try to stay awake, but you just could *not* *focus* on doing so. It has been a tiring night, and so you slowly settle down and drift away, unknowingly",
+        "options": {
+            "Wake up": {
+                "dest": [9]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 9,
+        "text": "You wake, and you are greeted with total silence. The noises have ceased. Yet at the same time, you feel the presence of something that you cannot see",
+        "options": {
+            "Look around": {
+                "dest": [11]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 10,
+        "text": "After a sleepless night, you get up, and you are greeted with total silence. The noises have ceased. Yet at the same time, you feel the presence of something that you cannot see",
+        "options": {
+            "Look around": {
+                "dest": [11]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 11,
+        "text": "The silence and darkness becomes eeriee. Perhaps the most frightening sound is the lack of sound, and the most frightening sight is the lack of sight. For what's more frightening than the unknown? You cannot tell what is in the unknown, and so it becomes replaced with the surreal",
+        "options": {
+            "Hide": {
+                "dest": [12, 13],
+                "met": ["rel", "!rel"],
+                "eff": ["f-", "f-"]
+            },
+            "Look around": {
+                "dest": [14, 15],
+                "met": ["foc", "!foc"]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 12,
+        "text": "You bury your face into your bed covers, hoping for some reason that those will muffle out silence and darkness. In your *relaxation*, You feel a presence, not of sound or sight, nearing you",
+        "options": {
+            "Look up": {
+                "dest": [14, 15],
+                "met": ["rel", "str"]
+            },
+            "Continue hiding": {
+                "dest": [13]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 13,
+        "text": "You attempt to hide. But how does one hide from the lack of something? This question keep you *unrelaxed*",
+        "options": {
+            "Look up": {
+                "dest": [14, 15],
+                "met": ["rel", "str"]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 14,
+        "text": "You look around, calmly and coolly. You can feel *relaxation* wash over you",
+        "options": {
+            "OK": {
+                "dest": [16]
+            }
+        }
+    },
+    {
+        "id": 15,
+        "text": "You look around, but you are still frightened. Though you don't want to admit it, you've gotten extremely *stressed*",
+        "options": {
+            "OK": {
+                "dest": [16]
+            }
         }
     }
 ]
