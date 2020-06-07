@@ -93,6 +93,12 @@ class scene2 extends Phaser.Scene {
       frameRate: 0.5,
       repeat: -1
     });
+    this.anims.create({
+      key: "talk_anim",
+      frames: this.anims.generateFrameNumbers("guy_talk_move"),
+      frameRate: 0.5,
+      repeat: -1
+    });
     this.person.play("smile_anim");
 
     var style = { font: "20px", wordWrap: { width: 923 } };
@@ -115,6 +121,8 @@ class scene2 extends Phaser.Scene {
         this.person.play("think_anim");
       else if (node["image"] == "guy_smile")
         this.person.play("smile_anim");
+      else if (node["image"] == "guy_talk")
+        this.person.play("talk_anim");
       else {
         this.person.anims.stop();
         this.person.setTexture(node["image"]);
@@ -196,6 +204,8 @@ class scene2 extends Phaser.Scene {
             this.person.play("think_anim");
           else if (node["image"] == "guy_smile")
             this.person.play("smile_anim");
+          else if (node["image"] == "guy_talk")
+            this.person.play("talk_anim");    
           else {
             this.person.anims.stop();
             this.person.setTexture(node["image"]);

@@ -22,6 +22,10 @@ class scene1 extends Phaser.Scene{
           frameHeight: 400
         });
         this.load.image("guy_talk", STATIC_URL + "sprites/guy_talking.png");
+        this.load.spritesheet("guy_talk_move", STATIC_URL + "sprites/guy_talking_spritesheet.png",{
+          frameWidth: 400,
+          frameHeight: 400
+        });
         this.load.image("demon_smile", STATIC_URL + "sprites/demon_smile.png");
         this.load.image("demon_angry", STATIC_URL + "sprites/demon_angry.png");
         this.load.image("text_box", STATIC_URL + "sprites/text_box.png");
