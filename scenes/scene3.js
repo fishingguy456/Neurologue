@@ -44,6 +44,12 @@ class scene3 extends Phaser.Scene {
       frameRate: 0.5,
       repeat: -1
     });
+    this.anims.create({
+      key: "talk_anim",
+      frames: this.anims.generateFrameNumbers("guy_talk_move"),
+      frameRate: 0.5,
+      repeat: -1
+    });
     this.person.play("smile_anim");
 
     var style = { font: "20px", wordWrap: { width: 923 } };
@@ -56,7 +62,7 @@ class scene3 extends Phaser.Scene {
     var option_style = { font: "20px", wordWrap: { width: 400 } };
     this.option1 = this.add.text(100, 680, "[OK]", option_style);
     this.option2 = this.add.text(600, 680, "[OK]", option_style);
-    var nodes = this.cache.json.get('data_part2');
+    var nodes = this.cache.json.get('data_part1');
     node = nodes[goto-1]
     this.eeg_text = this.add.text(700, 10, "Emotiv EEG not connected\nEEG metrics set to default", style);
     if (node["image"] === null)
@@ -66,6 +72,8 @@ class scene3 extends Phaser.Scene {
         this.person.play("think_anim");
       else if (node["image"] == "guy_smile")
         this.person.play("smile_anim");
+      else if (node["image"] == "guy_talk")
+        this.person.play("talk_anim");
       else {
         this.person.anims.stop();
         this.person.setTexture(node["image"]);
@@ -98,9 +106,16 @@ class scene3 extends Phaser.Scene {
     });
     if (clicked > 0) {
       var nodes = this.cache.json.get("data_part1");
+      var effect = "";
       var destinations = node["options"][Object.keys(node["options"])[clicked - 1]]["dest"];
-      if (destinations.length === 1) goto = destinations[0]
-      else if (response === null || !response.hasOwnProperty("met")) goto = destinations[0];
+      var effects = null;
+      if (node["options"][Object.keys(node["options"])[clicked - 1]].hasOwnProperty("eff"))
+        var effects = node["options"][Object.keys(node["options"])[clicked - 1]]["eff"];
+      if (destinations.length === 1 || response === null || !response.hasOwnProperty("met")) {
+        goto = destinations[0];
+        if (effects !== null)
+          effect = effects[0];
+      }
       else {
         var met_vars = node["options"][Object.keys(node["options"])[clicked - 1]]["met"];
         var max = 0.0;
@@ -123,7 +138,13 @@ class scene3 extends Phaser.Scene {
           i++;
         })
         goto = destinations[ind]
+        effect = effects[ind]
       }
+      if (effect == "a+") psychiatrist++;
+      else if (effect == "a-") psychiatrist--;
+      else if (effect == "f+") freewill++;
+      else if (effect == "f-") freewill--;
+      else if (effect) dreamself = true;
       if (goto - 1 === nodes.length) {
         this.music1.stop();
         this.scene.start("scene_3");
@@ -137,6 +158,8 @@ class scene3 extends Phaser.Scene {
             this.person.play("think_anim");
           else if (node["image"] == "guy_smile")
             this.person.play("smile_anim");
+          else if (node["image"] == "guy_talk")
+            this.person.play("talk_anim");    
           else {
             this.person.anims.stop();
             this.person.setTexture(node["image"]);
