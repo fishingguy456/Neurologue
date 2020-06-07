@@ -1,0 +1,123 @@
+[
+    {
+        "id": 1,
+        "text": "Suddenly, the light turns on",
+        "options": {
+            "This is nothing more than my mind deceiving me": {
+                "dest": [2, 3],
+                "met": ["f+", "f-"]
+            },
+            "Best assume that this is real": {
+                "dest": [4, 5],
+                "met": ["f+", "f-"]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 2,
+        "text": "You think to your ideas. The mind can be deceitful. It is unlikely that this is anything more than that",
+        "options": {
+            "Open the door": {
+                "dest": [6]
+            },
+            "Call out": {
+                "dest": [7]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 3,
+        "text": "You think to your ideas. But you were never someone who really believed in the uncertainty of the universe.",
+        "options": {
+            "Open the door": {
+                "dest": [8]
+            },
+            "Call out": {
+                "dest": [9]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 4,
+        "text": "You wager your decisions. If this is but a trick of the mind, there will come no harm. But if you assume it is not, you will be prepared",
+        "options": {
+            "Open the door": {
+                "dest": [6]
+            },
+            "Call out": {
+                "dest": [7]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 5,
+        "text": "You try to get prepared. But inside you feel as if you cannot take yourself seriously. Surely, the mind is deceitful, isn't it?",
+        "options": {
+            "Open the door": {
+                "dest": [8]
+            },
+            "Call out": {
+                "dest": [9]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 6,
+        "text": "You carefully open the door. At first the light is blinding. But then, you see it",
+        "options": {
+            "Stay still": {
+                "dest": [10]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 7,
+        "text": "You call out. But as if by pure irrationality, your voice only echoes back immediatly, not reaching the door",
+        "options": {
+            "Open the door": {
+                "dest": [6]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 8,
+        "text": "You open the door meekly. Just then you see it",
+        "options": {
+            "Stay still": {
+                "dest": [11]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 9,
+        "text": "You call out. But it does not appear to be your voice. The door slowly opens",
+        "options": {
+            "OK": {
+                "dest": [11]
+            }
+        }
+    },
+    {
+        "id": 10,
+        "text": "HAHAHAHAHAHAHAHAHAHAHAHAHA",
+        "options": {
+            "Attack": {
+                "dest": [12, 13, 14],
+                "met": ["exc", "foc", "!foc"]
+            },
+            "Observe": {
+                "dest": [15, 16, 17],
+                "met": ["int", "foc", "!foc"]
+            }
+        },
+        "image": "demon_smile"
+    }
+]

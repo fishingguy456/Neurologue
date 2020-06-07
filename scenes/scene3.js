@@ -31,7 +31,7 @@ class scene3 extends Phaser.Scene {
     this.box = this.add.image(22, 578, "text_box");
     this.box.setOrigin(0, 0);
 
-    this.person = this.add.sprite(250, 375, "guy_smile_move");
+    this.person = this.add.sprite(250, 378, "guy_smile_move");
     this.anims.create({
       key: "smile_anim",
       frames: this.anims.generateFrameNumbers("guy_smile_move"),
@@ -147,7 +147,7 @@ class scene3 extends Phaser.Scene {
       else if (effect) dreamself = true;
       if (goto - 1 === nodes.length) {
         this.music1.stop();
-        this.scene.start("scene_3");
+        this.scene.start("scene_4");
       }
       else {
         node = nodes[goto - 1];
