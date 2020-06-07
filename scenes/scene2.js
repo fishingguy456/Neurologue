@@ -23,22 +23,27 @@ const met_map = {
 function httpRequest(){
   if (httpTime >= 120) {
     let xhr = new XMLHttpRequest();
-    xhr.open("GET", "http://localhost:8080", true);
-    xhr.send();
+    try {
+      xhr.open("GET", "http://localhost:8080", true);
+      xhr.send();
 
-    xhr.onreadystatechange = processRequest;
-    function processRequest(e) {
-      if (xhr.readyState == 4 && xhr.status == 200) {
-        response = JSON.parse(xhr.responseText);
-        console.log(response)
-        console.log('Engagement: ' + response['met'][met_map['eng']]);
-        console.log('Excitement: ' + response['met'][met_map['exc']]);
-        console.log('LongTermExcitement: ' + response['met'][met_map['lex']]);
-        console.log('Stress: ' + response['met'][met_map['str']]);
-        console.log('Relaxation: ' + response['met'][met_map['rel']]);
-        console.log('Interest: ' + response['met'][met_map['int']]);
-        console.log('Focus: ' + response['met'][met_map['foc']]);
+      xhr.onreadystatechange = processRequest;
+      function processRequest(e) {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+          response = JSON.parse(xhr.responseText);
+          console.log(response)
+          console.log('Engagement: ' + response['met'][met_map['eng']]);
+          console.log('Excitement: ' + response['met'][met_map['exc']]);
+          console.log('LongTermExcitement: ' + response['met'][met_map['lex']]);
+          console.log('Stress: ' + response['met'][met_map['str']]);
+          console.log('Relaxation: ' + response['met'][met_map['rel']]);
+          console.log('Interest: ' + response['met'][met_map['int']]);
+          console.log('Focus: ' + response['met'][met_map['foc']]);
+        }
       }
+    }
+    catch(error) {
+      console.log(error);
     }
     httpTime = 0;
   }
@@ -86,6 +91,7 @@ class scene2 extends Phaser.Scene {
     this.option2 = this.add.text(600, 680, "[OK]", style);
     var nodes = this.cache.json.get('data_part1');
     node = nodes[goto-1]
+    this.eeg_text = this.add.text(700, 20, "Emotiv EEG not connected", style);
     if (node["image"] === null)
       this.person.visible = false;
     else {
@@ -117,32 +123,32 @@ class scene2 extends Phaser.Scene {
       var nodes = this.cache.json.get("data_part1");
       var destinations = node["options"][Object.keys(node["options"])[clicked - 1]]["dest"];
       if (destinations.length === 1) goto = destinations[0]
+      else if (response === null || !response.hasOwnProperty("met")) {
+        goto = destinations[0];
+        this.eeg_text.setText("Emotiv EEG not connected")
+      }
       else {
+        this.eeg_text.setText("Emotiv EEG connected")
         var met_vars = node["options"][Object.keys(node["options"])[clicked - 1]]["met"];
         var max = 0.0;
         var ind = 0;
         var i = 0;
         met_vars.forEach(item => {
           var value = 0;
-          if (response === null)
-            value = 0.5;
-          else {
-            if (item.charAt(0) === '!')
-              value = response["met"][met_map[item.slice(1)]];
-            else
-              value = response["met"][met_map[item]];
-            if (value === null)
-              value = 0.5
-            else if (item.charAt(0) === '!')
-              value = 1 - value;
-          }
+          if (item.charAt(0) === '!')
+            value = response["met"][met_map[item.slice(1)]];
+          else
+            value = response["met"][met_map[item]];
+          if (value === null)
+            value = 0.5
+          else if (item.charAt(0) === '!')
+            value = 1 - value;
           if (value > max) {
             max = value;
             ind = i;
           }
           i++;
         })
-        console.log(max);
         goto = destinations[ind]
       }
       node = nodes[goto - 1];
@@ -159,7 +165,7 @@ class scene2 extends Phaser.Scene {
       } 
       else
         this.option2.visible = false
-      clicked = 0;
+      clicked = 0;  
     }
   }
 }
