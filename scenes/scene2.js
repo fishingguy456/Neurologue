@@ -1,12 +1,12 @@
 var goto = 1;
 var clicked = 0;
 var node = null;
-var httpDone = false;
+var httpTime = 0;
 var response = null;
 
 
 function httpRequest(){
-  if (httpDone == false) {
+  if (httpTime >= 120) {
     let xhr = new XMLHttpRequest();
     xhr.open("GET", "http://localhost:9000/assets/data/data_part1.json", true);
     xhr.send();
@@ -15,10 +15,11 @@ function httpRequest(){
     function processRequest(e) {
       if (xhr.readyState == 4 && xhr.status == 200) {
         response = JSON.parse(xhr.responseText);
-        console.log(response);
+        console.log(response[0].id);
+        console.log(response[0].text);
       }
     }
-    httpDone = true;
+    httpTime = 0;
   }
 }
 
@@ -70,6 +71,7 @@ class scene2 extends Phaser.Scene {
   }
 
   update() {
+    httpTime++;
     httpRequest();
     this.option1.on("pointerdown", function () {
       clicked = 1;
