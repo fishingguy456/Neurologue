@@ -111,7 +111,8 @@
         "options": {
             "Attack": {
                 "dest": [12, 13, 14],
-                "met": ["exc", "foc", "!foc"]
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
             },
             "Observe": {
                 "dest": [15, 16, 17],
@@ -119,5 +120,394 @@
             }
         },
         "image": "demon_smile"
+    },
+    {
+        "id": 11,
+        "text": "HAHAHAHAHAHAHAHAHAHAHAHAHA",
+        "options": {
+            "Attack": {
+                "dest": [18, 19, 20],
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
+            },
+            "Observe": {
+                "dest": [21, 22, 23],
+                "met": ["int", "foc", "!foc"]
+            }
+        },
+        "image": "demon_smile"
+    },
+    {
+        "id": 12,
+        "text": "You swing your arm towards it, but it goes through as if it is not there at all. The adrenaline from your *excitement* saves you as it misses you too as you charge through",
+        "options": {
+            "Attack": {
+                "dest": [12, 13, 14],
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
+            },
+            "Observe": {
+                "dest": [15, 16, 17],
+                "met": ["int", "foc", "!foc"]
+            }
+        },
+        "image": "demon_angry"
+    },
+    {
+        "id": 13,
+        "text": "*Focusing* on its head, you rush forward and grab it, but you go right through. You were so focused on attacking that you did not notice it turn around and hit you, square in the chest. You fall over",
+        "options": {
+            "Attack": {
+                "dest": [12, 13, 14],
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
+            },
+            "Observe": {
+                "dest": [15, 16, 17],
+                "met": ["int", "foc", "!foc"]
+            }
+        },
+        "image": "demon_angry"
+    },
+    {
+        "id": 14,
+        "text": "You reach out to attack it, but you've already *lost* *focus*. It ignores your pathetic attempt of an assault and kicks you all the way back to the floor",
+        "options": {
+            "Attack": {
+                "dest": [18, 19, 20],
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
+            },
+            "Observe": {
+                "dest": [21, 22, 23],
+                "met": ["int", "foc", "!foc"]
+            }
+        },
+        "image": "demon_angry"
+    },
+    {
+        "id": 15,
+        "text": "You observe, and something catches your *interest* that you did not see before",
+        "options": {
+            "Attack": {
+                "dest": [12, 13, 14],
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
+            },
+            "Talk": {
+                "dest": [24, 25],
+                "met": ["a+", "a-"]
+            }
+        },
+        "image": "demon_smile"
+    },
+    {
+        "id": 16,
+        "text": "You observe, and as you *focus* you see something that you did not see before",
+        "options": {
+            "Attack": {
+                "dest": [12, 13, 14],
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
+            },
+            "Talk": {
+                "dest": [24, 25],
+                "met": ["a+", "a-"]
+            }
+        },
+        "image": "demon_smile"
+    },
+    {
+        "id": 17,
+        "text": "You observe, but you *cannot* *focus*. Before you can react, it gets very close to you",
+        "options": {
+            "Attack": {
+                "dest": [12, 13, 14],
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
+            }
+        },
+        "image": "demon_angry"
+    },
+    {
+        "id": 18,
+        "text": "You swing your arm towards it, but it goes through as if it is not there at all. The adrenaline from your *excitement* saves you as it misses you too as you charge through",
+        "options": {
+            "Attack": {
+                "dest": [18, 19, 20],
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
+            },
+            "Observe": {
+                "dest": [21, 22, 23],
+                "met": ["int", "foc", "!foc"]
+            }
+        },
+        "image": "demon_angry"
+    },
+    {
+        "id": 19,
+        "text": "*Focusing* on its head, you rush forward and grab it, but you go right through. You were so focused on attacking that you did not notice it turn around and hit you, square in the chest. You fall over",
+        "options": {
+            "Attack": {
+                "dest": [18, 19, 20],
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
+            },
+            "Observe": {
+                "dest": [21, 22, 23],
+                "met": ["int", "foc", "!foc"]
+            }
+        },
+        "image": "demon_angry"
+    },
+    {
+        "id": 20,
+        "text": "*You reach out to attack it, but you've already *lost* *focus*. It ignores your pathetic attempt of an assault and kicks you all the way back to the floor. Unprepared and overwhelmed, you collapse, and everything goes dark",
+        "options": {
+            "OK": {
+                "dest": [100]
+            }
+        },
+        "image": "demon_angry"
+    },
+    {
+        "id": 21,
+        "text": "You observe, and something catches your *interest* that you did not see before",
+        "options": {
+            "Attack": {
+                "dest": [18, 19, 20],
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
+            },
+            "Talk": {
+                "dest": [24, 25],
+                "met": ["a+", "a-"]
+            }
+        },
+        "image": "demon_smile"
+    },
+    {
+        "id": 22,
+        "text": "You observe, and as you *focus* you see something that you did not see before",
+        "options": {
+            "Attack": {
+                "dest": [18, 19, 20],
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
+            },
+            "Talk": {
+                "dest": [24, 25],
+                "met": ["a+", "a-"]
+            }
+        },
+        "image": "demon_smile"
+    },
+    {
+        "id": 23,
+        "text": "You observe, but you *cannot* *focus*. Before you can react, it gets very close to you",
+        "options": {
+            "Attack": {
+                "dest": [18, 19, 20],
+                "met": ["exc", "foc", "!foc"],
+                "eff": ["", "a-", ""]
+            }
+        },
+        "image": "demon_angry"     
+    },
+    {
+        "id": 24,
+        "text": "HAHAHAHA!!!",
+        "options": {
+            "Who are you?": {
+                "dest": [26, 30],
+                "met": ["y", "n"]
+            },
+            "Who am I?": {
+                "dest": [31, 27],
+                "met": ["n", "y"]
+            }
+        },
+        "image": "demon_smile"   
+    },
+    {
+        "id": 25,
+        "text": "DO NOT PESTER ME WITH YOUR DULL CONVERSATION. I SEE THROUGH YOUR FACADE. I TAKE NO INTEREST IN IT",
+        "options": {
+            "Demand to speak": {
+                "dest": [28, 29],
+                "met": ["lex", "!lex"]
+            }
+        },
+        "image": "demon_angry"  
+    },
+    {
+        "id": 26,
+        "text": "WHO AM I? THAT, ONLY I CAN KNOW. THERE ARE TOO MANY THINGS YOU ARE IGNORANT OF",
+        "options": {
+            "Who am I?": {
+                "dest": [27, 37],
+                "met": ["y", "n"]
+            },
+            "What do you want?": {
+                "dest": [40, 39],
+                "met": ["y", "n"]
+            }
+        },
+        "image": "demon_smile"
+    },
+    {
+        "id": 27,
+        "text": "WHO ARE YOU? THAT, ONLY YOU CAN KNOW. HAVE YOU REALLY FIGURED OUT THE TRUE NATURE OF YOURSELF YET?",
+        "options": {
+            "Yes, I am but chemicals": {
+                "dest": [32, 33],
+                "met": ["f+", "f-"]
+            },
+            "Yes, I am but my mind": {
+                "dest": [34, 35],
+                "met": ["f+", "f-"]
+            }
+        },
+        "image": "demon_smile"  
+    },
+    {
+        "id": 28,
+        "text": "ALAS, I SHALL HEAR YOU THROUGH. YOU HAVE BEEN *EXCITED* FOR QUITE A *LONG TIME* NOW",
+        "options": {
+            "Who are you?": {
+                "dest": [26, 30],
+                "met": ["y", "n"]
+            },
+            "Who am I?": {
+                "dest": [31, 27],
+                "met": ["n", "y"]
+            }
+        },
+        "image": "demon_angry"   
+    },
+    {
+        "id": 29,
+        "text": "SILENCE! FOR NOW AND FOR EVER! I THOUGHT WE COULD HAVE SOME FUN, BUT YOU'VE REALLY RAINED ON MY PARADE. I HAVE NOT SEEN AN OUNCE OF *LONG-TERM EXCITEMENT* FROM YOU THIS WHOLE TIME",
+        "options": {
+            "Huh?": {
+                "dest": [36]
+            }
+        },
+        "image": "demon_angry"  
+    },
+    {
+        "id": 30,
+        "text": "But alas, just as you had said, it is not possible to control yourself in your dreams, and so, instead, you ask \"Who are you?\"",
+        "options": {
+            "OK": {
+                "dest": [26]
+            }
+        },
+        "image": "demon_smile"  
+    },
+    {
+        "id": 31,
+        "text": "But alas, just as you had said, it is not possible to control yourself in your dreams, and so, instead, you ask \"Who am I?\"",
+        "options": {
+            "OK": {
+                "dest": [27]
+            }
+        },
+        "image": "demon_smile" 
+    },
+    {
+        "id": 32,
+        "text": "HAHAHAHAHA! HOW HUMOUROUS IT IS THAT THE CHEMICALS OF YOUR BRAIN DETERMINE YOURSELF TO BE CHEMICALS. IF SUCH IS THE CASE, IS IT NOT THE MIND THAT EXISTS RATHER THAN WHAT IS MATERIAL?",
+        "options": {
+            "I don't know...": {
+                "dest": [35]
+            },
+            "Your argument does not deter me": {
+                "dest": [33]
+            }
+        },
+        "image": "demon_smile" 
+    },
+    {
+        "id": 33,
+        "text": "HAHAHAHAHA! I DOUBT YOU UNDERSTAND WHAT YOU YOURSELF ARE SAYING. YOU SUFFER FROM THE CHAINS OF TENACITY! A HOPELESS DIAGNOSIS. I SEE NO PURPOSE IN PLAYING AROUND ANYMORE. SO LONG!",
+        "options": {
+            "So long...": {
+                "dest": [101]
+            }
+        },
+        "image": "demon_smile" 
+    },
+    {
+        "id": 34,
+        "text": "HAHAHAHAHA! SO YOU SEE, THAT AS THE MIND IS THE HELM RATHER THAN THE UNIVERSE, WE CAN EXPECT NO DIFFERENCE BETWEEN WHAT WE DETERMINE TO BE DREAMS AND NIGHTMARES. EVEN I, MAY BE SOMETHING VERY MUCH REAL. DON'T YOU THINK?",
+        "options": {
+            "I know who you are...": {
+                "dest": [38]
+            }
+        },
+        "image": "demon_smile" 
+    },
+    {
+        "id": 35,
+        "text": "HMMM... YOU DO NOT SEEM SO CONVINCED. DON'T PANDER TO ME WITH YOUR FACADE! YOU WHO DECLARES ONE THING THEN CHANGES TO ANOTHER. IF ALL THAT IS REAL IS LOGIC, THEN WHY SHOULD WE DABBLE WITH THE ILLOGICAL? I SEE NO PURPOSE IN PLAYING AROUND ANYMORE. SO LONG!",
+        "options": {
+            "So long...": {
+                "dest": [101]
+            }
+        },
+        "image": "demon_angry" 
+    },
+    {
+        "id": 36,
+        "text": "In one swift movement, before your eyes could see the final lights and you ears can hear the fatal sound. All becomes silent and dark once more",
+        "options": {
+            "OK": {
+                "dest": [100]
+            }
+        },
+        "image": null
+    },
+    {
+        "id": 37,
+        "text": "But this time, you were able to say what you wanted to say. The mind is a chaotic system, afterall",
+        "options": {
+            "OK": {
+                "dest": [27]
+            }
+        },
+        "image": "demon_smile" 
+    },
+    {
+        "id": 38,
+        "text": "OF COURSE! I SHOULD HAVE KNOWN THAT SOMEONE LIKE YOU COULD DEDUCE MY IDENTITY! GOOD FOR YOU MY KINDRED SPIRIT! THERE IS NO NEED TO QUESTION WHAT WE BOTH ALREADY KNOW! MY PURPOSE HERE IS SERVED. GOOD DAY!",
+        "options": {
+            "Good day...": {
+                "dest": [102]
+            }
+        },
+        "image": "demon_smile" 
+    },
+    {
+        "id": 39,
+        "text": "But this time, you were able to say what you wanted to say. The mind is a chaotic system, afterall",
+        "options": {
+            "OK": {
+                "dest": [40]
+            }
+        },
+        "image": "demon_smile" 
+    },
+    {
+        "id": 40,
+        "text": "I DO NOT WANT ANYMORE THAN I CAN CARRY. PLEASE, CONTINUE. LET US CONVERSE ON THE VERY FOUNDATIONS OF THIS UNIVERSE!!!",
+        "options": {
+            "Who am I?": {
+                "dest": [27]
+            }
+        },
+        "image": "demon_smile"
     }
+
 ]
