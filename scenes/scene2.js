@@ -44,9 +44,10 @@ class scene2 extends Phaser.Scene {
         delay:0,
       }
     };
-    var music = this.sound.add('calm_theme', config);
-    music.play(config);
-    music.setLoop(true);
+    this.music1 = this.sound.add('calm_theme', config);
+    this.music1.play(config);
+    this.music1.setLoop(true);
+
     this.box = this.add.image(22, 578, "text_box");
     this.box.setOrigin(0, 0);
     this.person = this.add.image(50, 178, "guy_smile");

@@ -31,9 +31,9 @@ class scene1 extends Phaser.Scene{
             delay:0,
           }
         };
-        var music = this.sound.add('evil_theme', config);
-        music.play(config);
-        music.setLoop(true);
+        this.music0 = this.sound.add('evil_theme', config);
+        this.music0.play(config);
+        this.music0.setLoop(true);
         
         // this.music0 = this.sound.add("evil_theme");
         this.background = this.add.image(0, 0, "menu");
