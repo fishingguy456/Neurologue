@@ -66,8 +66,19 @@ class scene2 extends Phaser.Scene {
     } 
     else
       this.option2.visible = false
+<<<<<<< HEAD
     this.option1.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.option1.width, this.option1.height), Phaser.Geom.Rectangle.Contains);
     this.option2.setInteractive(new Phaser.Geom.Rectangle(0, 0, this.option2.width, this.option2.height), Phaser.Geom.Rectangle.Contains);
+=======
+    this.option1.setInteractive(
+      new Phaser.Geom.Rectangle(0, 0, this.option1.width, this.option1.height),
+      Phaser.Geom.Rectangle.Contains
+    );
+    this.option2.setInteractive(
+      new Phaser.Geom.Rectangle(0, 0, this.option2.width, this.option2.height),
+      Phaser.Geom.Rectangle.Contains
+    );
+>>>>>>> e88082231cdac476757f786987830227ec3fd9f8
   }
 
   update() {
