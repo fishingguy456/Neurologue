@@ -5,7 +5,6 @@ A psychological horror choose-your own-adventure game that follows the player's 
 ## Technologies used
 * Emotiv INSIGHT 5 Channel EEG
 * Emotiv's Cortex API
-* GameMaker Language
 * WebSocket
 * Phaser.js
 * Node.js
