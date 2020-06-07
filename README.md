@@ -21,4 +21,4 @@ Run the app
 
     node server.js
 
-Open [http://localhost:9000](http://localhost:9000) to view it in your browser.
+Open [http://localhost:9000](http://localhost:9000) to view it in your browser, and make sure your sound is on!
