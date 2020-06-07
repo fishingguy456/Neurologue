@@ -5,8 +5,20 @@
         "options": {
             "Check the time": {
                 "dest": [2]
+            },
+            "Sit on the bed": {
+                "dest": [3]
             }
         },
         "image": null
+    },
+    {
+        "id": 2,
+        "text": "It is now 9:00. In the distance, you hear thunber rumbling",
+        "options": {
+            "OK": {
+                "dest": [4]
+            }
+        }
     }
 ]
