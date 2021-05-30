@@ -10,7 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "phaser3-rex-plugins": "^1.1.18",
-    "ws": "^7.3.0",
+    "ws": "^7.4.6",
     "xmlhttprequest": "^1.8.0"
   }
 }
